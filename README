@@ -1,0 +1,26 @@
+README for code associated with the paper "Identifying Causal Subsequent Memory Effects" by David J. Halpern, Shannon Tubridy, Lila Davachi and Todd M. Gureckis
+
+Directories may need to be changed throughout and intermediate files are often created. Some jupyter notebooks may not be able to run all the way through in one shot if there is limited RAM.
+
+behav_plots.R
+Generates Figure 2, S11 and S12
+
+dag.R
+Generates and identifies independence assumptions in DAGs in figures S1-4
+
+power_analysis.R
+Generates Figure S13
+
+preproc/
+code for preprocessing the t-maps derived from fmriprep
+run in the following order:
+create_vox_coord_mapper.ipynb
+create_roi_dfs.ipynb
+create_classifier_rep_preproc_dfs.ipynb
+
+models/
+code for running models in Figures 5, 6, S14, S15
+run glmer_item_test_loc_classifiers.R first to fit baseline IRT model
+run_models.s provides a bash script for running all models on a cluster with SLURM scheduling
+after fitting models, run load_perm_clf_files.R to aggregate permutation runs
+clf_plot.R creates figures
